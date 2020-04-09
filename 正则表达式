@@ -1,0 +1,32 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Dec 10 11:29:45 2019
+
+@author: LiYX
+"""
+
+import re
+print("可以匹配一个字母或者下划线,匹配0次或者多次的数字、字母、或者下划线")
+print("eg:a101")
+test1 = 'someone@gmail.com'
+if re.match(re.compile(r'^[\w]+\.?[\w]+@[\w]+\.com$'), test1):
+    print('ok!')
+else:
+    print('error!')
+test2='bill.gates@microsoft.com'
+if re.match(re.compile(r'^[\w]+\.?[\w]+@[\w]+\.com$'), test2):
+    print('ok!')
+else:
+    print('error!')
+test3='bob#example.com'
+if re.match(re.compile(r'^[\w]+\.?[\w]+@[\w]+\.com$'), test3):
+    print('ok!')
+else:
+    print('error!')
+test4='mr-bob@example.com'
+if re.match(re.compile(r'^[\w]+\.?[\w]+@[\w]+\.com$'), test4):
+    print('ok!')
+else:
+    print('error!')
+print("此正则表达式:^[\w]+\.?[\w]+@[\w]+\.com$")
+print("解释为：字母一个以上.一个或没有,字母一个以上@字母不限.com")
